@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8" />
-		<title>咕噜咕噜家的主页</title>
-		<!-- <script src="https://unpkg.com/vue@next"></script> -->
-		<script src="js/v3.2.8/vue.global.prod.js" type="text/javascript" charset="utf-8"></script>
-	</head>
-	<body>
-		<div id="app">
-			欢迎{{ counter }}
-			<input v-else='login' name='counter' :name='counter'/>
-		</div>
-		<script>
-	
-			const App = {
-				data() {
-					return {
-						login: true,
-						counter: 0
-					}
-				}
-			};
-			Vue.createApp(App).mount('#app');
-		</script>
-	</body>
+<head> 
+<meta charset="utf-8"> 
+<title>首页</title> 
+</head>
+<body>
+<p id="demo">点击按钮获取您当前坐标（可能需要比较长的时间获取）：</p>
+<button onclick="getLocation()">点我</button>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+{
+	if (navigator.geolocation)
+	{
+		navigator.geolocation.getCurrentPosition(showPosition);
+	}
+	else
+	{
+		x.innerHTML="该浏览器不支持获取地理位置。";
+	}
+}
+
+function showPosition(position)
+{
+	x.innerHTML="纬度: " + position.coords.latitude + 
+	"<br>经度: " + position.coords.longitude;	
+}
+</script>
+</body>
 </html>

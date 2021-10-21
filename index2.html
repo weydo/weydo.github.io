@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!-- import CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<!-- 引入 http-vue-loader -->
+		<script src="https://unpkg.com/http-vue-loader"></script>
+	</head>
+	<body>
+		<div id="app">
+			<el-button @click="visible = true">Button</el-button>
+			<el-dialog :visible.sync="visible" title="Hello world" style="background-color: #4CD964;">
+				<p>Try Element</p>
+			</el-dialog>
+			
+			<my-component></my-component>
+			<el-input prop="value1" v-model="value1"></el-input>
+		
+			<el-input prop="value2" v-model="value2"></el-input>
+			<el-button @click="add()">=</el-button>
+			<el-input v-model="result"></el-input>
+			
+		</div>
+	</body>
+	<!-- import Vue before Element -->
+	<script src="js/v2.6.10/vue.js"></script>
+	<!-- import JavaScript -->
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script>
+	    // 使用httpVueLoader
+	    Vue.use(httpVueLoader);
+		
+		new Vue({
+			el: '#app',
+			data: function() {
+				return {
+					visible: false,
+					name: "weydo",
+					value1: 0,
+					value2: 0,
+					result: 0,
+				}
+			},
+			methods:{
+				add(){
+					return this.result = this.value1 + this.value2;
+				}
+			},
+			components: {
+				// 将组建加入组建库
+				'my-component': 'url:./component/my-component.vue'
+			}
+
+		})
+	</script>
+</html>
