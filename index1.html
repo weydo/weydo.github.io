@@ -1,26 +1,125 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="utf-8" />
-		<title></title>
-
+		<meta charset="UTF-8">
+		<title>预览页面</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">   
+		    <meta name="viewport"        
+		        content="width=device-width,initial-scale=1,
+		        minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	</head>
 	<body>
+		<!-- <p>{{counter}}</p> -->
+		<!-- <img src="./img/wechat_haha.jpg" /> -->
 		<div id="app">
-			<p>{{counter}}</p>
-			
+			<h1
+				style="margin-top:12pt; margin-left:21.25pt; margin-bottom:12pt; text-indent:-21.25pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:240%; widows:0; orphans:0; font-size:14pt">
+				<span style="font-family:'黑体'">1.</span><span
+					style="font:7pt 'Times New Roman'">&#xa0;&#xa0;&#xa0;&#xa0;
+				</span><a name="_Toc534729513"><span style="font-family:'黑体'">接入指引</span></a>
+			</h1>
+			<h2
+				style="margin-top:8pt; margin-left:42.55pt; margin-bottom:8pt; text-indent:-22.7pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:172%; widows:0; orphans:0; font-size:12pt">
+				<span style="font-family:Arial">1.1.</span><span style="font:7pt 'Times New Roman'">&#xa0;
+				</span><a name="_Toc534729514"><span style="font-family:'黑体'">流程</span></a>
+			</h2>
+			<p style="margin-top:0pt; margin-bottom:0pt; line-height:20pt"><span
+					style="font-family:'仿宋'; font-size:10.5pt; font-weight:bold">1</span><span
+					style="font-family:'仿宋'; font-size:10.5pt; font-weight:bold">.企业开发回调接口</span></p>
+			<p style="margin-top:0pt; margin-bottom:0pt; text-indent:21pt; line-height:20pt"><span
+					style="font-family:'仿宋'; font-size:10.5pt">企业根据开放平台的回调规则(</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">参考文档第</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">3</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">部分)</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">，提供接口。</span></p>
+			<p style="margin-top:0pt; margin-bottom:0pt; line-height:20pt"><span
+					style="font-family:'仿宋'; font-size:10.5pt; font-weight:bold">2.注册回调信息</span></p>
+			<p style="margin-top:0pt; margin-bottom:0pt; text-indent:21pt; line-height:20pt"><span
+					style="font-family:'仿宋'; font-size:10.5pt">(</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">1)</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">根据开放平台接入指引，创建一个应用标签为聚合支付的应用(商家、服务商模式均可)，然后根据创建的应用类型走对应的授权方式获取accessToken(接口调用令牌)。</span>
+			</p>
+			<p style="margin-top:0pt; margin-bottom:0pt; text-indent:21pt; line-height:20pt"><span
+					style="font-family:'仿宋'; font-size:10.5pt">(</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">2</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">)</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">创建聚合支付应用以后，在应用管理--应用概况--回调配置处配置回调接口地址。</span>
+			</p>
+			<p style="margin-top:7.8pt; margin-bottom:0pt; text-align:justify; widows:0; orphans:0; font-size:10.5pt">
+				<span style="font-family:'仿宋'; font-size:9pt; color:#ff0000">注：诺诺开放平台官网：</span><a
+					href="https://open.jss.com.cn/" style="text-decoration:none"><span
+						style="font-family:Calibri; font-size:9pt; color:#ff0000">https://open.jss.com.cn/</span></a>
+			</p>
+			<h1
+				style="margin-top:12pt; margin-left:21.25pt; margin-bottom:12pt; text-indent:-21.25pt; text-align:justify; page-break-inside:avoid; page-break-after:avoid; line-height:240%; widows:0; orphans:0; font-size:14pt">
+				<span style="font-family:'黑体'">2.</span><span
+					style="font:7pt 'Times New Roman'">&#xa0;&#xa0;&#xa0;&#xa0;
+				</span><a name="_Toc534729515"><span style="font-family:'黑体'">业务回调地址配置</span></a>
+			</h1>
+			<p style="margin-top:0pt; margin-bottom:0pt; text-indent:21pt; line-height:20pt"><span
+					style="font-family:'仿宋'; font-size:10.5pt">企业用税号登陆开放平台，在应用管理--应用概况--回调配置处配置回调接口地址。</span>
+			</p>
+			<p style="margin-top:0pt; margin-bottom:0pt; text-indent:21pt; line-height:20pt"><span
+					style="font-family:'仿宋'; font-size:10.5pt">1）</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">正常收款回调在聚合支付回调地址中进行配置</span></p>
+			<p style="margin-top:0pt; margin-bottom:0pt; text-indent:21pt; line-height:20pt"><span
+					style="font-family:'仿宋'; font-size:10.5pt">2）</span><span
+					style="font-family:'仿宋'; font-size:10.5pt">退款回调再聚合支付退款回调地址中进行配置</span></p>
+			<p style="margin-top:0pt; margin-bottom:0pt; text-align:justify; widows:0; orphans:0; font-size:10.5pt">
+				<span style="font-family:Calibri">&#xa0;</span>
+			</p>
+
+			<button id="pay" style="margin-left: 38%;width: 8rem;height: 2rem;
+			background-color: #ffaa00;font-size: 1rem; color: white;
+			border-radius: 0.5;
+			">
+				付费下载</button>
 		</div>
 
 	</body>
-	<!-- <script src="https://unpkg.com/vue@next"></script> -->
-	<script src="js/v2.6.10/vue.js" type="text/javascript" charset="utf-8"></script>
+
 	<script>
-	var vm = new Vue({
-	el:'#app',
-	data: {
-		counter: 0,
-		id: 999
-	}
-	});
+		$(function() {
+			$("#pay").click(function() {
+				alert("11");
+				$.ajax({
+					url: "http://192.168.137.78:8088/charge/vip/pay", //要请求的服务器url
+					// data: {
+					// 	chargeUuid: "123456789",
+					// 	customerName: "123456789",
+					// 	customerTax: "123456789"
+					// }, //第一个name对应的是后端request.getParameter("name")的name、第二个name对应的是此js中的var name = $("#name").val();的name
+					async: true, //是否是异步请求
+					cache: false, //是否缓存结果
+					//contentType: "application/json";
+					// Access-Control-Allow-Headers: "*"; 
+					type: "POST", //请求方式
+					dataType: "json", //服务器返回什么类型数据 text xml javascript json(javascript对象)
+					success: function(res) { //函数会在服务器执行成功后执行，result就是服务器返回结果
+						console.log(res);
+						alert("22");
+						if (200 == res.code) {
+							var url = res.msg;
+							console.log("url=", url)
+							var u = navigator.userAgent;
+							var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -
+								1; //android终端
+							var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+							if (isAndroid) { //android终端
+								window.open(url);
+							} else if (isiOS) { //ios终端
+								alert(url);
+								window.location.href = url;
+							}
+							//window.open(url).location.href;
+						}
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+
+					}
+				});
+			});
+		});
 	</script>
 </html>
