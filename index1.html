@@ -80,7 +80,7 @@
 	<script>
 		$(function() {
 			$("#pay").click(function() {
-				alert("11");
+				alert("按钮方法进入");
 				$.ajax({
 					url: "http://wetest.vaiwan.com/charge/vip/pay", //要请求的服务器url
 					// data: {
@@ -97,8 +97,6 @@
 					//dataType: 'jsonp', // 数据类型
 					//jsonp: 'jsonpCallback', // 指定回调函数名，与服务器端接收的一致，并回传回来
 					success: function(res) { //函数会在服务器执行成功后执行，result就是服务器返回结果
-						console.log(res);
-
 						if (200 == res.code) {
 							var url = res.msg;
 							console.log("url=", url)
@@ -116,7 +114,7 @@
 						}
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
-						alert("33");
+						alert("请求支付失败");
 					}
 				});
 			});
