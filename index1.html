@@ -72,7 +72,6 @@
 
 			<button id="pay" style="margin-left: 38%;width: 8rem;height: 2rem;
 			background-color: #ffaa00;font-size: 1rem; color: white;
-			border-radius: 0.5;
 			">
 				付费下载</button>
 		</div>
@@ -84,7 +83,7 @@
 			$("#pay").click(function() {
 				alert("11");
 				$.ajax({
-					url: "http://192.168.137.78:8088/charge/vip/pay", //要请求的服务器url
+					url: "http://wetest.vaiwan.com/charge/vip/pay", //要请求的服务器url
 					// data: {
 					// 	chargeUuid: "123456789",
 					// 	customerName: "123456789",
