@@ -3,9 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>预览页面</title>
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">   
-		    <meta name="viewport"        
-		        content="width=device-width,initial-scale=1,
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1,
 		        minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 	</head>
@@ -70,10 +69,10 @@
 				<span style="font-family:Calibri">&#xa0;</span>
 			</p>
 
-			<button id="pay" style="margin-left: 38%;width: 8rem;height: 2rem;
+			<button id="pay" style="margin-left: 33%;width: 10rem;height: 2rem;
 			background-color: #ffaa00;font-size: 1rem; color: white;
 			">
-				付费下载</button>
+				付费查看全文</button>
 		</div>
 
 	</body>
@@ -89,33 +88,35 @@
 					// 	customerName: "123456789",
 					// 	customerTax: "123456789"
 					// }, //第一个name对应的是后端request.getParameter("name")的name、第二个name对应的是此js中的var name = $("#name").val();的name
-					async: true, //是否是异步请求
+					async: false, //是否是异步请求
 					cache: false, //是否缓存结果
 					//contentType: "application/json";
 					// Access-Control-Allow-Headers: "*"; 
-					type: "POST", //请求方式
-					dataType: "json", //服务器返回什么类型数据 text xml javascript json(javascript对象)
+					type: "GET", //请求方式
+					// dataType: "json", //服务器返回什么类型数据 text xml javascript json(javascript对象)
+					//dataType: 'jsonp', // 数据类型
+					//jsonp: 'jsonpCallback', // 指定回调函数名，与服务器端接收的一致，并回传回来
 					success: function(res) { //函数会在服务器执行成功后执行，result就是服务器返回结果
 						console.log(res);
-						alert("22");
+
 						if (200 == res.code) {
 							var url = res.msg;
 							console.log("url=", url)
 							var u = navigator.userAgent;
 							var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -
-								1; //android终端
+							1; //android终端
 							var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
 							if (isAndroid) { //android终端
 								window.open(url);
 							} else if (isiOS) { //ios终端
-								alert(url);
+								alert("请求支付成功！支付完成后请点击 ‘返回商家’ 按钮");
 								window.location.href = url;
 							}
 							//window.open(url).location.href;
 						}
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
-
+						alert("33");
 					}
 				});
 			});
